@@ -1,0 +1,27 @@
+trigger:
+
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  - group: your-variable-group-name  # If you have shared variables in a variable group
+
+steps:
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendAzureRmResourceGroupName: 'app-grp7'
+    backendAzureRmStorageAccountName: 'sgcuwehowehdi'
+    backendAzureRmContainerName: 'shduishodhqo'
+  
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'Free Trial(ed0b0d17-e9e1-4067-af64-a7f15d91e10e)'
+    backendAzureRmResourceGroupName: 'app-grp7'
+    backendAzureRmStorageAccountName: 'sgcuwehowehdi'
+    backendAzureRmContainerName: 'shduishodhqo'
